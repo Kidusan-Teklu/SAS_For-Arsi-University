@@ -1,0 +1,107 @@
+# API Tests for SAS Project
+
+## Attendance API
+### POST: Mark Attendance
+URL: http://127.0.0.1:8000/api/attendance/mark/
+Method: POST
+Body (JSON):
+{
+    "user": "680be3e51e9bd0f5201170a5",
+    "date": "2025-04-26",
+    "time_in": "09:00:00",
+    "time_out": "17:00:00",
+    "status": "present"
+}
+
+### GET: Get All Attendance Records
+URL: http://127.0.0.1:8000/api/attendance/all/
+Method: GET
+
+## Notifications API
+### POST: Send Notification
+URL: http://127.0.0.1:8000/api/notifications/
+Method: POST
+Body (JSON):
+{
+    "recipient": "680be3e51e9bd0f5201170a5",
+    "message": "Meeting at 3 PM."
+}
+
+### GET: Get All Notifications
+URL: http://127.0.0.1:8000/api/notifications/
+Method: GET
+
+## Schedules API
+### POST: Create Schedule
+URL: http://127.0.0.1:8000/api/schedules/
+Method: POST
+Body (JSON):
+{
+    "title": "Math Lecture",
+    "description": "Algebra and Calculus",
+    "date": "2025-04-30",
+    "time": "10:00:00",
+    "department": "Mathematics",
+    "batch": "3rd year",
+    "classroom": 5
+}
+
+### GET: Get All Schedules
+URL: http://127.0.0.1:8000/api/schedules/
+Method: GET
+
+## Biometric API
+### POST: Add Biometric Data
+URL: http://127.0.0.1:8000/api/biometric/
+Method: POST
+Body (JSON):
+{
+    "user": "680be3e51e9bd0f5201170a5",
+    "fingerprint": "sample_fingerprint_data"
+}
+
+### GET: Get All Biometric Data
+URL: http://127.0.0.1:8000/api/biometric/
+Method: GET
+GET: Retrieve specific biometric data
+
+URL: http://127.0.0.1:8000/api/biometric/data/<id>/
+PUT: Update specific biometric data
+
+URL: http://127.0.0.1:8000/api/biometric/data/<id>/
+Body: JSON data with updated fields.
+DELETE: Delete specific biometric data
+
+URL: http://127.0.0.1:8000/api/biometric/data/<id>/
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+## Recognition API
+### POST: Add Recognition Data
+URL: http://127.0.0.1:8000/api/recognition/data/
+Method: POST
+Body (JSON):
+{
+    "user": "680be3e51e9bd0f5201170a5",
+    "image_data": "base64_encoded_image_data"
+}
+
+### GET: Get All Recognition Data
+URL: http://127.0.0.1:8000/api/recognition/
+Method: GET
+
+## Reports API
+### POST: Generate Report
+URL: http://127.0.0.1:8000/api/reports/
+Method: POST
+Body (JSON):
+{
+    "user": "680be3e51e9bd0f5201170a5",
+    "report_type": "attendance",
+    "start_date": "2025-04-01",
+    "end_date": "2025-04-25"
+}
+
+### GET: Get All Reports
+URL: http://127.0.0.1:8000/api/reports/
+Method: GET

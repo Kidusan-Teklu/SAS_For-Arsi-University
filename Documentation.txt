@@ -1,0 +1,515 @@
+ARSI UNIVERSITY
+COLLEGE OF NATURAL AND COMPUTATIONAL SCIENCES
+DEPARTMENT OF COMPUTER SCIENCE
+WEB BASED ATTENDANCE MANAGEMENT SYSTEM FOR ARSI UNIVERSITY
+SUBMITTED TO DEPARTMENT OF COMPUTER SCIENCE
+IN PARTIAL FULFILMENT OF THE REQUIREMENT FOR
+THE DEGREE OF BACHELOR OF SCIENCE IN COMPUTER SCIENCE
+BY
+NO NAME ID NO
+1. Kidusan Teklu …………………………………UGR/13262/14
+2. Esayas Etana……………………………………UGR/11870/14
+3. Nardos Tilaye………………………………..…UGR/13221/14
+4. Mohammed Umer………………………………UGR/13285/14
+5. Rediet Dereje………………………………...…UGR/13304/14
+ADVISOR: Musa A.
+Asella, Ethiopia March, 2025
+
+CHAPTER ONE: Introduction
+Smart Web-Based Attendance Management System, is technologically advanced solution to revolutionize attendance management. The Smart Web-Based Attendance Management System (SAS) is a technologically advanced solution that automates attendance tracking for students and employees at Arsi University, offering enhanced precision, speed, and transparency compared to traditional methods.
+
+For students, SAS incorporates advanced AI-driven facial recognition technology. This ensures a secure and reliable method of verifying student presence. The facial recognition component allows for quick and contactless attendance marking, eliminating the need for manual sign-in sheets and reducing potential for errors or fraudulent entries. For university employees, the system leverages biometric systems, providing a secure and accurate means of attendance verification. Biometric data ensures that only authorized personnel can record their attendance, preventing time theft and maintaining accurate records.SAS is designed not only to capture attendance data efficiently but also to provide real-time feedback to its users. The system incorporates a robust notification system, instantly informing individuals of their attendance status. These real-time alerts keep both students and employees informed, which minimizes any uncertainties and discrepancies that could arise from manual processes. SAS reduces the administrative workload by automating attendance tracking.
+Enhance the transition between sections – Instead of abruptly stating the university’s commitment to innovation, connect it smoothly.
+Example:
+Before: The deployment of SAS demonstrates Arsi University's dedication to embracing forward-thinking solutions.
+Improved: By adopting SAS, Arsi University advances its commitment to digital transformation, improving operational efficiency and user experience.
+
+This allows administrative staff to focus on more strategic and value-added tasks, thereby increasing overall operational effectiveness. The deployment of SAS demonstrates Arsi University's dedication to embracing forward-thinking solutions. This initiative underscores the university’s firm commitment to operational excellence through the adoption of modern technologies. SAS stands as a testament to Arsi University’s continuous pursuit of innovative ways to improve administrative processes and enhance the overall experience for its students and employees.
+
+1.1 Background of the Organization
+Arsi University, established in 2014, is located in Asella, Ethiopia. It stands as a prominent institution providing quality education and fostering research across a diverse range of disciplines. The university serves thousands of students and employs hundreds of staff members, making effective management systems a critical need. Its core mission is to advance knowledge and innovation while addressing societal challenges through education and research. As part of its vision to be a leader in academic excellence and technological integration, Arsi University needs to implement modern solutions that improve administrative efficiency. By digitizing attendance tracking, the university enhances productivity and transparency.
+
+1.1.1 Mission of the Organization
+Arsi University is committed to sustainable development through practice-based education and problem-solving research in collaboration with industries.To provide quality education, promote research, and produce ethically responsible graduates who contribute to societal development.
+
+1.1.2 Vision of the Organization
+Becoming one of the most known and chosen Applied Science universities in East Africa by 2030.To become a premier African university recognized for innovation, academic excellence, and transformative community impact.
+
+However, despite its technological growth, the university still relies on traditional attendance tracking methods, leading to inefficiencies and administrative burdens.
+1.2 Statement of the Problem
+Manual Processes for Attendance: Relying on manual processes for recording attendance leads to inefficiencies and consumes a significant amount of time. These outdated methods are cumbersome and slow down administrative tasks related to tracking attendance.
+Inaccurate Attendance Data: Manually collected attendance data is prone to inaccuracies. This is because the data entry is susceptible to human errors. Furthermore, manual systems are often vulnerable to manipulation, especially when recording student attendance, compromising the integrity of the records.
+Lack of Comprehensive Reporting: There is a limited capacity to generate detailed reports when using manual attendance systems. This deficiency hinders comprehensive analysis of attendance patterns. Consequently, it creates challenges in effectively tracking attendance trends and managing payroll information accurately.
+
+1.3 Objectives
+1.3.1 General Objectives
+The general objective of the project is to develop a web-based attendance system for Arsi University that will automate attendance tracking for students and employees while improving efficiency, accuracy, and transparency.
+1.3.2 Specific Objectives
+The aims of the SAS development are:
+To automate attendance tracking for students and employees.
+To integrate AI and biometric systems for accuracy.
+To provide real-time notifications and reports.
+To enhance data security and transparency
+To develop biometric-based authentication for employee attendance
+To provide real-time reporting and notifications to students and employees.
+To integrate a user-friendly dashboard for administrators to monitor attendance trends.
+
+1.4 Feasibility Study
+1.4.1 Technical Feasibility
+Proven Technologies: AI facial recognition (e.g., OpenCV, TensorFlow) and biometric devices are mature and scalable.
+IT Support: University IT teams can manage system maintenance.
+
+1.4.2 Economical Feasibility
+As part of this, the costs and benefits associated with the proposed system compared and the project is economically feasible only if tangible or intangible benefits outweigh costs.
+Transportation cost-> 400 ETB
+Total Printing and photocopy cost->500 ETB
+Material (papers, pens)cost->600 ETB
+
+Cost Savings: Reduces long-term labor costs for manual tracking.
+ROI: Improved efficiency and reduced errors justify initial investments in hardware/software.
+
+1.4.3 Operational Feasibility
+
+It is a standard that ensures interoperability without stifling competition and innovation among users, to the benefit of the public both in terms of cost and service quality. The proposed system is acceptable to users.
+Training programs for staff/students ensure smooth adoption to get user acceptance
+Phased implementation aligns with academic calendars for Minimal Workflow Disruption
+Designed to accommodate future growth in users and features to ensure scalability
+
+1.5 Significance and Beneficiary of the Project
+1.5.1 Significance
+The Smart Attendance System (SAS) at Arsi University is designed to address critical challenges in attendance tracking and payroll management. Its significance can be outlined as follows:
+
+Enhanced Accuracy
+Elimination of Proxy Attendance: By utilizing biometric systems and AI-based facial recognition, the project ensures that only the registered individuals can mark their attendance, significantly reducing the risk of proxy attendance.
+Reliable Data Collection: Automated attendance tracking minimizes human errors associated with manual processes, ensuring that attendance records are accurate and trustworthy.
+
+Increased Efficiency
+Time Savings: Automating attendance processes reduces the time spent on administrative tasks, allowing faculty and staff to focus on more critical responsibilities.
+
+Improved Transparency
+Real-Time Reporting: The system provides real-time access to attendance and payroll data, enhancing transparency for both students and staff. This fosters trust and accountability within the university community.
+Detailed Analytics: The ability to generate detailed reports allows administrators to analyze attendance trends and make informed decisions regarding resource allocation and policy adjustments.
+
+User-Friendly Experience
+Ease of Use: The implementation of biometric systems and facial recognition technology simplifies the attendance process for both students and staff, making it more user-friendly and efficient.
+Accessibility: The system is designed to be accessible to all users, ensuring that everyone can easily engage with the technology.
+
+Support for Institutional Goals
+Alignment with University Vision: The project supports Arsi University's mission to integrate modern technology into administrative processes, enhancing overall operational efficiency.
+Contribution to Academic Excellence: By improving attendance tracking the system contributes to a more organized and effective learning environment, ultimately supporting academic success.
+
+Scalability and Future-Proofing
+Adaptable Framework: The system is designed to be scalable, allowing for future enhancements and the integration of additional features as the university grows and technology evolves.
+Preparedness for Technological Advances: By adopting cutting-edge technologies, the university positions itself to adapt to future advancements in biometric and AI technologies, ensuring long-term viability.
+Overall: The Smart Attendance System not only addresses the immediate challenges faced by Arsi University but also lays the foundation for a more efficient, transparent, and user-friendly administrative framework. This project is a significant step toward modernizing university operations, ultimately enhancing the educational experience for students and staff alike.
+
+1.5.2 Beneficiaries
+
+Students: Access to attendance records via self-service portals.
+Employees: Simplified clock-in/out processes.
+Administrators: Streamlined reporting and analytics.
+University: Improved operational credibility.
+
+1.6 Scope and Limitation of the Project
+1.6.1 Scope In
+1.Student Attendance Tracking:
+We will implement AI-based facial recognition for students in classrooms.
+We will use a centralized database to store and manage attendance records.
+2..Employee Attendance Tracking:
+We will use biometric devices to log employee arrival and departure times.
+The SAS will provide real-time updates to lecturers and administrators
+The SAS will ensure accurate computation of working hours.
+3.Reporting Modules:
+The SAS will generate detailed attendance reports for students and employees.
+The SAS will notify students and employees regarding attendance irregularities.
+The SAS will Provide customizable reports based on specific requirements.
+4 Administrative Dashboard:
+The SAS will provide Real-time visualization of attendance trends.
+The SAS will provide access to historical data for analysis.
+The SAS will provide notification system for irregularities (e.g., absenteeism).
+1.6.2 Scope Out
+1.Leave Management:
+The system will not handle leave approvals or tracking.
+2.Integration with External Systems:
+The system will no have integration with external HR or academic management systems.
+3.Support for Remote Attendance:
+ Attendance tracking will be limited to on-site mechanisms and devices.
+4.Payroll Integration
+ The system will not include payroll integration at current stage.
+
+1.6.3 Limitations
+Dependency on stable internet and power supply.
+
+1.7 The Methodology of the Project
+1.7.1 Data Collection Tools and Techniques
+Interviews: With staff to identify pain points.
+Surveys: For students/employees to gather requirements.
+Document Analysis: Review existing attendance workflows.
+Direct Observation :We observe the current system and identify the problems regarding to the attendance in managing the students and employees information. so it help us as easy way to understand the system and to develop the project. By observing their system structure we design a project to solve their problems.
+
+1.7.2 System Analysis and Design
+System design:- In our project, we would applying the concept of object oriented system Analysis and design development methodology, because as we learning from our knowledge it is best way to construct, manage and assemble objects that we implement in our system.
+And also the project team has choose Object Oriented Modeling (OOM) techniques and Unified modeling language tools (UML).
+Reason of choosing:
+It enables us to comprehensively model a system before we develop it
+Modification of the object implementation is easy because objects are loosely coupled.
+Understanding of the structure is easy because object oriented modeling and tools used to represent real world entities.
+Direct manipulation of architectural components is possible because several object oriented programming languages exist.
+
+Agile Development: Iterative sprints for feature delivery.
+UML Diagrams: Use case, sequence, and activity diagrams.
+Prototyping: Mockups for UI/UX validation.
+
+1.7.3 System Development Models
+To implement our System we use Softwares such as Google Colab for training the AI model, React.js for a dynamic user interface, Django for server-side logic and API development, MongoDB for centralized data storage, OpenCV or FaceNet for AI-based attendance and APIs from biometric device vendors like ZKTeco and also hardware like Cameras, Biometric Devices and Computers.
+
+1.7.4 System Testing Methodology
+In this level of testing process we have examined how the whole subsystems of Students and Employees information record system work together to achieve the desired goal. Its goals are to evaluate the functionality of subsystem after combination of individual subsystem weather it works correctly or not and Check the overall functionality of Students and Employees information record system that achieves the user’s requirement. System testing is the testing to ensure that software puts in different environments, the operating system still works. That is it is done with full system implementation and environment. So our system is implemented at different environment by using internet connection.
+
+Unit Testing: To validate individual modules.
+Integration Testing: To ensure seamless data flow between systems.
+User Acceptance Testing (UAT): To get feedback from stakeholders.
+
+1.8 System Development Tools and Techniques
+1.8.1. Softwares
+Development Environment: Visual Studio Code for general development and Google Colab for training the AI model.
+Frontend: React.js for a dynamic user interface.
+Backend: Django for server-side logic and API development.
+Database: MongoDB for centralized data storage.
+Facial Recognition: OpenCV or FaceNet for AI-based attendance.
+Biometric SDKs: APIs from biometric device vendors like ZKTeco.
+
+1.8.2. Hardware
+Cameras: Security cameras for facial recognition.
+Biometric Devices: Fingerprint scanners.
+Computers: Admin workstations for system management.
+
+CHAPTER FOUR
+SYSTEM ANALYSIS
+4.1. System Model
+
+4.1.1.Use case diagram
+
+4.1.1.1.Use Case 1: Mark Attendance via Facial Recognition
+
+Attribute Description
+Actor(s) Student
+Description Students mark their attendance using facial recognition technology.
+Preconditions 1. Student is registered in the system.
+2. Facial recognition is enabled.
+Postconditions Attendance is recorded in the system.
+Main Flow 1. Student stands in front of the facial recognition device.
+2. System captures the face and verifies identity.
+3. Attendance is marked successfully.
+Alternative Flow 1. If facial recognition fails, the system prompts the student to try again or use an alternative method.
+Exceptions 1. Facial recognition device malfunctions.
+2. Student's face is not recognized after multiple attempts.
+
+4.1.1.2.Use Case 2: Mark Attendance via Biometric Check-in/Check-out
+
+Attribute Description
+Actor(s) Employee
+Description Employees mark their attendance using biometric devices (e.g., fingerprint).
+Preconditions 1. Employee is registered in the system.
+2. Biometric device is functional.
+Postconditions Attendance is recorded in the system.
+Main Flow 1. Employee scans their fingerprint on the biometric device.
+2. System verifies identity.
+3. Attendance is marked successfully.
+Alternative Flow 1. If biometric verification fails, the system prompts the employee to try again or use an alternative method.
+Exceptions 1. Biometric device malfunctions.
+2. Employee's fingerprint is not recognized after multiple attempts.
+
+4.1.1.3.Use Case 3: View Attendance Record
+
+Attribute Description
+Actor(s) Student, Employee, Lecturer, DeptHead, HROfficer, FinanceOfficer, AdminOfficer
+Description Actors can view their attendance records.
+Preconditions 1. Actor is logged into the system.
+2. Attendance data exists.
+Postconditions Attendance record is displayed.
+Main Flow 1. Actor selects "View Attendance Record" from the menu.
+2. System retrieves and displays the attendance record.
+Alternative Flow 1. If no attendance data is found, the system displays a "No records found" message.
+Exceptions 1. System database is unavailable.
+2. Actor does not have permission to view the record.
+
+4.1.1.4.Use Case 4: Add Schedule & Assign Room
+
+Attribute Description
+Actor(s) Lecturer
+Description Lecturer adds a schedule and assigns a room for a class or event.
+Preconditions 1. Lecturer is logged into the system.
+2. Room availability is checked.
+Postconditions Schedule and room assignment are saved in the system.
+Main Flow 1. Lecturer selects "Add Schedule" from the menu.
+2. Lecturer enters schedule details (date, time, class).
+3. Lecturer assigns a room.
+4. System saves the schedule.
+Alternative Flow 1. If the room is unavailable, the system suggests alternative rooms or times.
+Exceptions 1. System fails to save the schedule due to a database error.
+2. Lecturer enters invalid schedule details.
+
+4.1.1.5.Use Case 5: Generate & View Attendance Reports
+
+Attribute Description
+Actor(s) Lecturer, DeptHead, HROfficer, FinanceOfficer, AdminOfficer
+Description Actors generate and view attendance reports for analysis or record-keeping.
+Preconditions 1. Actor is logged into the system.
+2. Attendance data exists.
+Postconditions Attendance report is generated and displayed.
+Main Flow 1. Actor selects "Generate Report" from the menu.
+2. Actor specifies the report parameters (e.g., date range, department).
+3. System generates and displays the report.
+Alternative Flow 1. If no data matches the parameters, the system displays a "No data found" message.
+Exceptions 1. System fails to generate the report due to a database error.
+2. Actor does not have permission to generate the report.
+
+4.1.1.6.Use Case 6: Manage Users & System Settings
+
+Attribute Description
+Actor(s) Admin
+Description Admin manages user accounts and system settings.
+Preconditions 1. Admin is logged into the system.
+2. Admin has the necessary permissions.
+Postconditions User accounts or system settings are updated.
+Main Flow 1. Admin selects "Manage Users" or "System Settings" from the menu.
+2. Admin performs actions (e.g., add/remove users, update settings).
+3. System saves changes.
+Alternative Flow 1. If an action fails (e.g., invalid input), the system displays an error message.
+Exceptions 1. System fails to save changes due to a database error.
+2. Admin attempts to modify restricted settings.
+
+4.1.1.7.Use Case 7: Send Batch Notifications
+
+Attribute Description
+Actor(s) System
+Description System sends batch notifications to users (e.g., attendance reminders).
+Preconditions 1. Notification content is prepared.
+2. User contact information is available.
+Postconditions Notifications are sent to users.
+Main Flow 1. System identifies the target audience (e.g., all students).
+2. System sends notifications via email or SMS.
+Alternative Flow 1. If a notification fails to send, the system retries or logs the error.
+Exceptions 1. Notification service is unavailable.
+2. User contact information is invalid.
+
+4.1.1.8.Use Case 8: Receive Notifications
+
+Attribute Description
+Actor(s) Student, Employee
+Description Users receive notifications from the system.
+Preconditions 1. User is registered in the system.
+2. Notifications are sent by the system.
+Postconditions User receives the notification.
+Main Flow 1. System sends a notification.
+2. User receives the notification via email or SMS.
+Alternative Flow 1. If the user's contact information is invalid, the notification is not delivered.
+Exceptions 1. Notification service is unavailable.
+2. User's email/SMS inbox is full.
+
+4.2. Object Model
+
+4.2.1.Class diagram
+
+4.2.2. Data Dictionary
+4.2.2.1. users Collection
+No Field Type Description
+
+1 _id ObjectId Unique user ID (MongoDB's default)
+2 name String Full name of the user
+3 email String Unique email for login
+4 password String Hashed password
+5 role String User role: "student", "employee", "lecturer", "admin""admin_official"
+6 department String Only for officials (e.g., "HR", "Finance")
+7 created_at DateTime User registration timestamp
+
+Role-Based Access Control (RBAC)
+Each role determines what the user can do in the system:
+Role Permissions
+student Mark attendance (Face Recognition), View own attendance
+employee Check-in/out (Biometric), View own attendance
+lecturer View reports, Assign attendance schedules (Room & Time)
+admin_official View attendance reports (HR, Finance, etc.)
+admin Manage users, Assign roles, Oversee the system
+
+4.2.2.2. students Collection
+Field Type Description
+_id ObjectId Unique student ID
+user_id ObjectId Reference to users collection
+department String Student’s department
+year Integer Year of study
+
+4.2.2.3. employees Collection
+Field Type Description
+_id ObjectId Unique employee ID
+user_id ObjectId Reference to users collection
+department String Employee’s department
+job_title String Employee’s job title
+
+4.2.2.4. attendance Collection
+Field Type Description
+_id ObjectId Unique attendance record ID
+user_id ObjectId Reference to users collection
+date_time DateTime Timestamp of attendance
+status String "Present", "Absent", "Late"
+device_id ObjectId Reference to devices collection
+
+4.2.2.5.5. schedules Collection
+Field Type Description
+_id ObjectId Unique schedule ID
+lecturer_id ObjectId Reference to users collection (Lecturer)
+room_number String Assigned room for attendance
+date_time DateTime Scheduled time for attendance
+
+4.3. Dynamic Model
+
+4.3.1. Sequence Diagram
+4.3.1.1Sequence Diagram for Student Marking Attendance
+
+4.3.1.2 Sequence Diagram for Employee Check-in/Check-out
+
+4.3.1.3 Sequence Diagram for Lecturer Adding a Schedule
+
+4.3.1.4 Sequence Diagram for System Sending Notifications
+
+4.3.1.5 Sequence Diagram for Viewing Attendance Records
+
+4.3.1.6 Sequence Diagram for Report Generation
+
+4.3.2. Activity Diagram
+4.3.2.1. Activity Diagram for Employee Check-in/Check-out
+
+4.3.2.2. Activity Diagram for Student Marking Attendance
+
+4.3.2.3. Activity Diagram for Generating Reports
+
+4.3.2.4. Activity Diagram for Sending Notifications
+
+4.3.2.5. Activity Diagram for Admin Managing Users
+
+4.3.2.6. Activity Diagram for Lecturer Adding a Schedule
+
+4.3.2.7. Activity Diagram for User Login and Authentication
+
+4.3.3. State Chart Diagram
+
+CHAPTER FIVE: SYSTEM DESIGN
+5.1 Design Goals
+The purpose of the system design is to model the Web-Based Attendance Management System (WAMS) with high quality, ensuring that all users can access the system easily and efficiently. The design goals are derived from the non-functional requirements, which describe the characteristics, attributes, and constraints of the system. The following are the key design goals for the proposed system:
+Reliability: The system should be reliable, ensuring accurate attendance tracking for both students and employees without failures.
+Security: The system should be secure, preventing unauthorized access to sensitive attendance data.
+Modifiability: The system should be designed to allow for future modifications and enhancements.
+Performance: The system should respond quickly, with high throughput for attendance tracking, reporting, and notifications.
+End User Criteria: The system should have a simple and intuitive graphical user interface (GUI) with descriptive forms and buttons. It should provide reliable responses to user requests.
+Dependability: The system should be robust, fault-tolerant, and able to handle invalid user inputs. It should ensure that only authorized users can access attendance data.
+Cost: The system should be developed, deployed, and maintained with minimal cost.
+Usability: The system should be easy to learn and use, efficient, and error-free.
+Fault Tolerance: The system should display appropriate error messages when users enter incorrect data (e.g., invalid username, password, or fields).
+
+5.2 Proposed System Architecture
+
+5.2.1 Subsystem Decomposition and Description
+The system is decomposed into the following subsystems based on the functional requirements:
+Student Attendance Subsystem:
+Uses AI-based facial recognition to automatically track student attendance during class sessions.
+Stores attendance data in a centralized database.
+Provides real-time notifications to students and instructors.
+
+Employee Attendance Subsystem:
+Uses biometric devices (e.g., fingerprint scanners) to record employee arrival and departure times.
+Tracks working hours and ensures accurate attendance records.
+Provides real-time updates to administrators.
+Reporting and Analytics Subsystem:
+Generates detailed attendance reports for students and employees.
+Provides customizable reports based on specific requirements.
+Offers real-time dashboards for administrators to monitor attendance trends.
+Administrative Dashboard Subsystem:
+Allows administrators to view and manage attendance data.
+Provides access to historical data for analysis.
+Sends notifications for irregularities (e.g., absenteeism).
+Notification Subsystem:
+Sends real-time notifications to students and employees regarding their attendance status.
+Alerts administrators of any irregularities or discrepancies.
+
+5.2.2 Deployment Diagram
+The deployment diagram shows the hardware and software components of the system, as well as the middleware used to connect them. It provides a static view of the run-time configuration of processing nodes and components.
+Hardware:
+Biometric devices (e.g., fingerprint scanners) for employee attendance.
+Security cameras with facial recognition capabilities for student attendance.
+Servers for hosting the web application and database.
+Software:
+Frontend: React.js for building a dynamic and responsive user interface.
+Backend: Django for server-side logic and API development.
+Database: MongoDB for centralized data storage.
+AI/ML: OpenCV or FaceNet for facial recognition.
+Biometric SDKs: APIs from biometric device vendors like ZKTeco.
+
+5.2.3 Detailed Class Diagram
+The class diagram illustrates the relationships between the key classes in the system:
+User: Represents both students and employees.
+AttendanceRecord: Stores attendance data for each user.
+FacialRecognition: Handles facial recognition for student attendance.
+BiometricDevice: Manages biometric data for employee attendance.
+ReportGenerator: Generates attendance reports.
+NotificationManager: Sends notifications to users and administrators.
+
+5.2.4 Persistent Data Management
+Persistent data management deals with how the system stores and manages data in the database. The following are the key persistent data components:
+Users Table: Stores user information (e.g., name, ID, role).
+Attendance Table: Stores attendance records (e.g., date, time, status).
+Reports Table: Stores generated reports.
+Notifications Table: Stores notification logs.
+
+5.2.5 Access Control and Security
+Access control and security are critical to ensure that only authorized users can access the system and that sensitive data is protected. The following security measures are implemented:
+User Authentication: Users must log in using secure credentials (username and password).
+Role-Based Access Control: Different roles (e.g., student, employee, administrator) have different access permissions.
+Data Encryption: Sensitive data (e.g., biometric data) is encrypted.
+Audit Logs: User activities are logged for security monitoring.
+Password Policies: Strong password policies are enforced.
+Two-Factor Authentication: An additional layer of security is implemented for sensitive operations.
+
+5.3 Packages
+The system is organized into the following packages:
+Attendance Package:
+Contains classes for managing student and employee attendance.
+Includes facial recognition and biometric device integration.
+Reporting Package:
+Contains classes for generating and managing attendance reports.
+Notification Package:
+Contains classes for sending notifications to users and administrators.
+Admin Package:
+Contains classes for managing the administrative dashboard and user access.
+
+5.4 User Interface Design
+The user interface is designed to be intuitive and user-friendly. Key features include:
+Student Interface:
+Displays attendance records and notifications.
+Allows students to view their attendance history.
+Employee Interface:
+Displays working hours and attendance records.
+Allows employees to view their attendance history.
+Admin Interface:
+Provides a dashboard for monitoring attendance trends.
+Allows administrators to generate reports and manage user access.
+
+Figure 25: User Interface Design
+
+5.5 Algorithm Design
+
+Facial Recognition Algorithm:
+Uses OpenCV or FaceNet to detect and recognize faces in real-time.
+Matches detected faces with stored student profiles to mark attendance.
+Biometric Authentication Algorithm:
+Uses fingerprint scanning to verify employee identity.
+Matches scanned fingerprints with stored biometric data.
+Report Generation Algorithm:
+Queries the database for attendance records.
+Generates customizable reports based on user input (e.g., date range, user group).
+
+5.6 References
+Kendall, K. E., & Kendall, J. E. (2011). Systems Analysis and Design (8th Edition).
+Bruegge, B., & Dutoit, A. H. (2004). Object-Oriented Software Engineering: Using UML, Patterns, and Java (2nd Edition).
+Valacich, J. S., George, J. F., & Hoffer, J. A. (2011). Essentials of Systems Analysis and Design (5th Edition).
+Post, G. V. (1999). Database Management Systems: Designing and Building Business Applications.

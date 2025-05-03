@@ -1,0 +1,15 @@
+/* Basic styling for AttendanceSystem */
+.attendance-system {
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.attendance-system h1 {
+  font-size: 24px;
+  color: #222;
+}
+
+.attendance-system p {
+  font-size: 16px;
+  color: #555;
+}

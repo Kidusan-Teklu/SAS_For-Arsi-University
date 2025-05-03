@@ -1,0 +1,215 @@
+.attendance-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.quick-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.quick-action-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.quick-action-button.check-in {
+  background-color: #27ae60;
+  color: white;
+}
+
+.quick-action-button.check-in:hover {
+  background-color: #219653;
+}
+
+.quick-action-button.check-out {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.quick-action-button.check-out:hover {
+  background-color: #c0392b;
+}
+
+.quick-action-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.mark-attendance-section, .attendance-records-section {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 20px;
+}
+
+.attendance-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input, .form-group select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.submit-button {
+  grid-column: 1 / -1;
+  padding: 12px 24px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: #2980b9;
+}
+
+.submit-button:disabled {
+  background-color: #a7c5ec;
+  cursor: not-allowed;
+}
+
+.success-message {
+  padding: 10px;
+  margin-bottom: 15px;
+  color: #27ae60;
+  background-color: #e3f7e8;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.error-message {
+  padding: 10px;
+  margin-bottom: 15px;
+  color: #e74c3c;
+  background-color: #feeaef;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.loading, .no-data {
+  text-align: center;
+  padding: 20px;
+  color: #7f8c8d;
+}
+
+.attendance-table-container {
+  overflow-x: auto;
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.attendance-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 15px;
+  border-bottom: 2px solid #e9ecef;
+  color: #495057;
+}
+
+.attendance-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e9ecef;
+  color: #212529;
+}
+
+.attendance-table tr:last-child td {
+  border-bottom: none;
+}
+
+.attendance-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.status-badge {
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status-badge.present {
+  background-color: #e3f7e8;
+  color: #27ae60;
+}
+
+.status-badge.absent {
+  background-color: #feeaef;
+  color: #e74c3c;
+}
+
+.status-badge.late {
+  background-color: #fff4e0;
+  color: #f39c12;
+}
+
+.status-badge.excused {
+  background-color: #e0f0ff;
+  color: #3498db;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .attendance-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .quick-actions {
+    flex-direction: column;
+  }
+  
+  .quick-action-button {
+    width: 100%;
+  }
+} 

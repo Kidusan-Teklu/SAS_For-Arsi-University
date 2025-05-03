@@ -1,0 +1,146 @@
+.face-attendance-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.face-attendance-container h1 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.attendance-info {
+  color: #7f8c8d;
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.camera-section {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.verification-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.captured-image-container {
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.captured-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.verify-button, .retake-button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.verify-button {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.verify-button:hover {
+  background-color: #27ae60;
+}
+
+.verify-button:active {
+  transform: scale(0.98);
+}
+
+.verify-button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.retake-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.retake-button:hover {
+  background-color: #c0392b;
+}
+
+.retake-button:active {
+  transform: scale(0.98);
+}
+
+.retake-button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.verification-status {
+  padding: 15px 25px;
+  background-color: #f4f6f9;
+  color: #2c3e50;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+  width: 100%;
+  max-width: 480px;
+}
+
+.verification-status.success {
+  background-color: #e3f7e8;
+  color: #27ae60;
+}
+
+.error-message {
+  padding: 15px 25px;
+  background-color: #feeaef;
+  color: #e74c3c;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+  width: 100%;
+  max-width: 480px;
+}
+
+.success-details {
+  margin-top: 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.success-details p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #34495e;
+} 

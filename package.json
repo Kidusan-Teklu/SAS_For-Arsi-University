@@ -1,0 +1,20 @@
+{
+  "name": "smart-attendance-system",
+  "version": "1.0.0",
+  "description": "Web-based Attendance Management System for Arsi University",
+  "scripts": {
+    "setup": "cd back && pip install -r requirements.txt && cd ../front && npm install",
+    "setup:backend": "cd back && pip install -r requirements.txt",
+    "setup:frontend": "cd front && npm install",
+    "dev:backend": "cd back && python manage.py runserver",
+    "dev:frontend": "cd front && npm start",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+} 

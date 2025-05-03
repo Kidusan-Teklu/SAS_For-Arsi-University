@@ -1,0 +1,67 @@
+.attendance-table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.attendance-table th {
+  background-color: #f5f5f5;
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #ddd;
+}
+
+.attendance-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.attendance-table tr:last-child td {
+  border-bottom: none;
+}
+
+.attendance-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-badge.present {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.status-badge.absent {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.status-badge.late {
+  background-color: #f39c12;
+  color: white;
+}
+
+.status-badge.excused {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.loading, .no-data {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+  font-size: 16px;
+} 

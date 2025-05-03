@@ -1,0 +1,126 @@
+.reports-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f4f8;
+}
+
+.reports-container {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.reports-section {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 22px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 12px;
+}
+
+.reports-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.report-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.report-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.report-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.report-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.view-report-button, .download-report-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-right: 10px;
+  transition: all 0.2s ease;
+}
+
+.view-report-button {
+  background-color: #3498db;
+  color: white;
+}
+
+.view-report-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.download-report-button {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.download-report-button:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+}
+
+.loading, .no-data {
+  text-align: center;
+  font-size: 16px;
+  color: #777;
+  padding: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .reports-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .report-card {
+    margin-bottom: 15px;
+  }
+  
+  .reports-container {
+    padding: 20px 15px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+} 
