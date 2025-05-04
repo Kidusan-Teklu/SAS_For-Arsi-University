@@ -13,6 +13,100 @@
   text-align: center;
 }
 
+/* Tabs for attendance methods */
+.method-tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.tab {
+  padding: 12px 25px;
+  background-color: #f0f0f0;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+  font-weight: 500;
+  color: #555;
+  transition: all 0.3s;
+  margin-right: 5px;
+}
+
+.tab.active {
+  background-color: #3498db;
+  color: white;
+}
+
+.tab.disabled {
+  background-color: #eaeaea;
+  color: #999;
+  cursor: not-allowed;
+  position: relative;
+}
+
+/* Info banner */
+.info-banner {
+  background-color: #f0f7ff;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  border: 1px solid #d0e1f9;
+}
+
+.info-header {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  color: #2c3e50;
+  transition: background-color 0.3s;
+}
+
+.info-header:hover {
+  background-color: #e3eefa;
+}
+
+.info-icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.toggle-icon {
+  margin-left: auto;
+  transition: transform 0.3s;
+  font-size: 12px;
+}
+
+.toggle-icon.open {
+  transform: rotate(180deg);
+}
+
+.info-content {
+  padding: 0 20px 20px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.info-content h3 {
+  margin: 15px 0 10px;
+  color: #2c3e50;
+  font-size: 18px;
+}
+
+.info-content ol {
+  padding-left: 20px;
+}
+
+.info-content li {
+  margin-bottom: 8px;
+}
+
+.info-content .note {
+  font-style: italic;
+  color: #e74c3c;
+  margin-top: 15px;
+}
+
 .attendance-info {
   color: #7f8c8d;
   text-align: center;
@@ -143,4 +237,41 @@
   margin: 8px 0;
   font-size: 16px;
   color: #34495e;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .method-tabs {
+    flex-direction: column;
+    border-bottom: none;
+  }
+  
+  .tab {
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .info-header {
+    padding: 12px 15px;
+  }
+  
+  .info-content {
+    padding: 0 15px 15px;
+  }
+}
+
+.tab-link {
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.view-logs-link {
+  color: #3498db;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.view-logs-link:hover {
+  text-decoration: underline;
 } 

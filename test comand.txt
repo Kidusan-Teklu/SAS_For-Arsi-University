@@ -1,0 +1,16 @@
+#####################################################################
+detection
+python test_face_recognition.py --test detect --image1 C:\Users\Redu\Desktop\Final_project\tempo\tempo\img\im1.jpg
+
+#############################################################
+
+compare
+
+python test_face_recognition.py --test compare --image1 C:\Users\Redu\Desktop\Final_project\tempo\tempo\img\im1.jpg --image2 C:\Users\Redu\Desktop\Final_project\tempo\tempo\img\im2.jfif
+
+### 3. Testing Webcam Face Detection
+
+To test real-time face detection using your webcam:
+
+```bash
+python test_face_recognition.py --test webcam

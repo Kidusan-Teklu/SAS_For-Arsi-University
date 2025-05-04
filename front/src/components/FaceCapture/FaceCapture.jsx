@@ -35,8 +35,10 @@ const FaceCapture = ({ onImageCapture }) => {
 
     // Cleanup function to stop webcam stream when component unmounts
     return () => {
-      if (videoRef.current && videoRef.current.srcObject) {
-        const tracks = videoRef.current.srcObject.getTracks();
+      // Store videoRef.current in a variable to avoid React hooks warning
+      const video = videoRef.current;
+      if (video && video.srcObject) {
+        const tracks = video.srcObject.getTracks();
         tracks.forEach(track => track.stop());
       }
     };

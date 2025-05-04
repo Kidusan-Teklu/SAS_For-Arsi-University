@@ -359,6 +359,9 @@ export default function ProfilePage() {
               <Link to="/face-attendance" className="face-attendance-link">
                 Mark attendance with face recognition
               </Link>
+              <Link to="/automatic-attendance" className="face-attendance-link automatic-link">
+                View automatic attendance logs
+              </Link>
             </div>
             
             <div className="face-upload-section">
@@ -400,6 +403,14 @@ export default function ProfilePage() {
                         <img src={image.url} alt="Face recognition" />
                         <div className="image-details">
                           <span>Uploaded: {image.uploaded_at}</span>
+                          <span className={`encoding-status ${image.has_encoding ? 'success' : 'error'}`}>
+                            {image.has_encoding ? 'Face detected ✓' : 'No face detected ✗'}
+                          </span>
+                          {image.has_encoding && image.confidence_score > 0 && (
+                            <span className="confidence-score">
+                              Confidence: {image.confidence_score.toFixed(1)}%
+                            </span>
+                          )}
                           <button 
                             className="delete-image-btn"
                             onClick={() => handleDeleteImage(image.id)}

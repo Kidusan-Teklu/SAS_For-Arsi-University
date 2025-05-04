@@ -354,6 +354,10 @@ h1 {
   background-color: #f0f7ff;
   border-radius: 8px;
   text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .face-attendance-link {
@@ -365,10 +369,46 @@ h1 {
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s;
+  min-width: 200px;
 }
 
 .face-attendance-link:hover {
   background-color: #2980b9;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.face-attendance-link.automatic-link {
+  background-color: #9b59b6;
+}
+
+.face-attendance-link.automatic-link:hover {
+  background-color: #8e44ad;
+}
+
+.encoding-status {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.encoding-status.success {
+  background-color: #e3f7e8;
+  color: #27ae60;
+}
+
+.encoding-status.error {
+  background-color: #feeaef;
+  color: #e74c3c;
+}
+
+.confidence-score {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #3498db;
+  text-align: center;
 } 

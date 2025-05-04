@@ -6,6 +6,7 @@ import RegisterPage from './pages/Login/RegisterPage';
 import Dashboard from './pages/Dashboard/Dashboard';
 import AttendancePage from './pages/Attendance/AttendancePage';
 import FaceAttendancePage from './pages/FaceAttendance/FaceAttendancePage';
+import AutomaticAttendancePage from './pages/AutomaticAttendance/AutomaticAttendancePage';
 import ReportsPage from './pages/Reports/ReportsPage';
 import ProfilePage from './pages/Profile/ProfilePage';
 import UsersPage from './pages/Users/UsersPage';
@@ -43,6 +44,12 @@ export default function App() {
           <Route path="/face-attendance" element={
             <ProtectedRoute requiredRole="student">
               <FaceAttendancePage />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/automatic-attendance" element={
+            <ProtectedRoute requiredRole="student">
+              <AutomaticAttendancePage />
             </ProtectedRoute>
           } />
           
