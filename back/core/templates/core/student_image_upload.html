@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Profile Image - Arsi University Attendance System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .user-info {
+            font-size: 14px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .card h2 {
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            color: #2c3e50;
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            color: white;
+            border: none;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .btn-primary {
+            background-color: #3498db;
+        }
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+        .btn-danger {
+            background-color: #e74c3c;
+        }
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+        .btn-back {
+            background-color: #7f8c8d;
+        }
+        .btn-back:hover {
+            background-color: #95a5a6;
+        }
+        .btn-success {
+            background-color: #2ecc71;
+        }
+        .btn-success:hover {
+            background-color: #27ae60;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .tab-container {
+            margin-bottom: 20px;
+        }
+        .tab-buttons {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        .tab-button {
+            padding: 10px 15px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            margin-right: 5px;
+            border-radius: 3px 3px 0 0;
+        }
+        .tab-button.active {
+            background-color: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 0 3px 3px 3px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .webcam-container {
+            width: 100%;
+            max-width: 640px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #webcam, #canvas {
+            width: 100%;
+            max-width: 640px;
+            height: auto;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #canvas {
+            display: none;
+        }
+        .preview-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .preview-container img {
+            max-width: 320px;
+            max-height: 240px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Profile Image - Arsi University</h1>
+            <div class="user-info">
+                <a href="{% url 'dashboard' %}" class="btn btn-back">Back to Dashboard</a>
+                <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Logout</button>
+                </form>
+            </div>
+        </header>
+        
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {% if message.tags == 'success' %}alert-success{% else %}alert-danger{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        
+        <div class="card">
+            <h2>Your Profile Image</h2>
+            <p>This image will be used for face recognition attendance.</p>
+            
+            {% if existing_image %}
+                <div class="preview-container">
+                    <h3>Your Current Image</h3>
+                    <img src="/static/known/{{ existing_image }}" alt="Your profile image">
+                    <p>To update your image, please upload a new one below.</p>
+                </div>
+            {% endif %}
+            
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <div class="tab-button active" data-tab="upload">Upload Image</div>
+                    <div class="tab-button" data-tab="webcam">Use Webcam</div>
+                </div>
+                
+                <div class="tab-content active" id="upload-tab">
+                    <form id="upload-form" method="post" action="{% url 'save_student_image' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="image">Select an image file:</label>
+                            <input type="file" id="image" name="image" class="form-control" accept="image/*" required>
+                        </div>
+                        <div class="preview-container" id="upload-preview-container" style="display: none;">
+                            <h3>Preview</h3>
+                            <img id="upload-preview" src="#" alt="Preview">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Upload Image</button>
+                    </form>
+                </div>
+                
+                <div class="tab-content" id="webcam-tab">
+                    <div class="webcam-container">
+                        <video id="webcam" autoplay playsinline></video>
+                        <canvas id="canvas"></canvas>
+                        <div>
+                            <button id="capture-btn" class="btn btn-primary">Capture Image</button>
+                            <button id="retake-btn" class="btn btn-danger" style="display: none;">Retake</button>
+                            <button id="save-webcam-btn" class="btn btn-success" style="display: none;">Save Image</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                button.classList.add('active');
+                document.getElementById(button.dataset.tab + '-tab').classList.add('active');
+                
+                // If switching to webcam tab, initialize webcam
+                if (button.dataset.tab === 'webcam') {
+                    initializeWebcam();
+                }
+            });
+        });
+        
+        // File upload preview
+        document.getElementById('image').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const img = document.getElementById('upload-preview');
+                    img.src = event.target.result;
+                    document.getElementById('upload-preview-container').style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        // Webcam functionality
+        let stream = null;
+        const webcamElement = document.getElementById('webcam');
+        const canvasElement = document.getElementById('canvas');
+        const captureButton = document.getElementById('capture-btn');
+        const retakeButton = document.getElementById('retake-btn');
+        const saveButton = document.getElementById('save-webcam-btn');
+        let webcamActive = false;
+        
+        function initializeWebcam() {
+            if (webcamActive) return;
+            
+            navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+                .then(streamObj => {
+                    stream = streamObj;
+                    webcamElement.srcObject = stream;
+                    webcamActive = true;
+                })
+                .catch(error => {
+                    console.error('Error accessing webcam:', error);
+                    alert('Could not access webcam. Please make sure your camera is connected and you have granted permission.');
+                });
+        }
+        
+        // Capture image from webcam
+        captureButton.addEventListener('click', () => {
+            const context = canvasElement.getContext('2d');
+            
+            // Set canvas dimensions to match video
+            canvasElement.width = webcamElement.videoWidth;
+            canvasElement.height = webcamElement.videoHeight;
+            
+            // Draw video frame to canvas
+            context.drawImage(webcamElement, 0, 0, canvasElement.width, canvasElement.height);
+            
+            // Hide webcam, show canvas
+            webcamElement.style.display = 'none';
+            canvasElement.style.display = 'block';
+            
+            // Update buttons
+            captureButton.style.display = 'none';
+            retakeButton.style.display = 'inline-block';
+            saveButton.style.display = 'inline-block';
+        });
+        
+        // Retake photo
+        retakeButton.addEventListener('click', () => {
+            // Show webcam, hide canvas
+            webcamElement.style.display = 'block';
+            canvasElement.style.display = 'none';
+            
+            // Update buttons
+            captureButton.style.display = 'inline-block';
+            retakeButton.style.display = 'none';
+            saveButton.style.display = 'none';
+        });
+        
+        // Save webcam image
+        saveButton.addEventListener('click', () => {
+            // Get image data from canvas
+            const imageData = canvasElement.toDataURL('image/png');
+            
+            // Create form data for submission
+            const formData = new FormData();
+            formData.append('webcam_data', imageData);
+            formData.append('csrfmiddlewaretoken', document.querySelector('[name=csrfmiddlewaretoken]').value);
+            
+            // Submit via AJAX
+            fetch('{% url "save_student_image" %}', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show success message
+                    alert('Image saved successfully!');
+                    // Reload page to show updated image
+                    window.location.reload();
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while saving the image.');
+            });
+        });
+        
+        // Clean up when leaving page
+        window.addEventListener('beforeunload', () => {
+            if (stream) {
+                stream.getTracks().forEach(track => track.stop());
+            }
+        });
+    </script>
+</body>
+</html> 

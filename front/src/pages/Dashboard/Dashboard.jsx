@@ -25,97 +25,49 @@ const Dashboard = () => {
       try {
         setLoading(true);
         
-        // Test user handling - use mock data
-        if (currentUser && currentUser.email === 'test@example.com') {
-          console.log('Using mock data for test user');
+        // If the user is a student or employee, fetch their attendance
+        if (currentUser && (currentUser.role === 'student' || currentUser.role === 'employee')) {
+          const response = await axios.get(`${API_URL}/attendance/user/${currentUser.id}/`);
+          const attendanceData = response.data;
           
-          // Mock data for test user
-          const mockStats = {
-            totalAttendance: 30,
-            presentCount: 25,
-            absentCount: 3,
-            lateCount: 2,
-          };
+          // Calculate stats
+          const totalAttendance = attendanceData.length;
+          const presentCount = attendanceData.filter(a => a.status === 'present').length;
+          const absentCount = attendanceData.filter(a => a.status === 'absent').length;
+          const lateCount = attendanceData.filter(a => a.status === 'late').length;
           
-          const mockAttendance = [
-            { date: '2025-05-03', status: 'present', time_in: '08:30:00', time_out: '16:30:00' },
-            { date: '2025-05-02', status: 'present', time_in: '08:25:00', time_out: '16:45:00' },
-            { date: '2025-05-01', status: 'late', time_in: '09:15:00', time_out: '17:00:00' },
-            { date: '2025-04-30', status: 'present', time_in: '08:30:00', time_out: '16:30:00' },
-            { date: '2025-04-29', status: 'absent', time_in: null, time_out: null },
-          ];
+          setStats({
+            totalAttendance,
+            presentCount,
+            absentCount,
+            lateCount,
+          });
           
-          setStats(mockStats);
-          setRecentAttendance(mockAttendance);
-          setLoading(false);
-          return;
-        }
-        
-        // Normal API flow
-        try {
-          // If the user is a student or employee, fetch their attendance
-          if (currentUser && (currentUser.role === 'student' || currentUser.role === 'employee')) {
-            const response = await axios.get(`${API_URL}/attendance/user/${currentUser.id}/`);
-            const attendanceData = response.data;
-            
-            // Calculate stats
-            const totalAttendance = attendanceData.length;
-            const presentCount = attendanceData.filter(a => a.status === 'present').length;
-            const absentCount = attendanceData.filter(a => a.status === 'absent').length;
-            const lateCount = attendanceData.filter(a => a.status === 'late').length;
-            
-            setStats({
-              totalAttendance,
-              presentCount,
-              absentCount,
-              lateCount,
-            });
-            
-            // Get most recent 5 attendance records
-            const sorted = [...attendanceData].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 5);
-            setRecentAttendance(sorted);
-          } 
-          // If admin or instructor, fetch all attendance records
-          else {
-            const response = await axios.get(`${API_URL}/attendance/all/`);
-            const attendanceData = response.data;
-            
-            // Calculate stats
-            const totalAttendance = attendanceData.length;
-            const presentCount = attendanceData.filter(a => a.status === 'present').length;
-            const absentCount = attendanceData.filter(a => a.status === 'absent').length;
-            const lateCount = attendanceData.filter(a => a.status === 'late').length;
-            
-            setStats({
-              totalAttendance,
-              presentCount,
-              absentCount,
-              lateCount,
-            });
-            
-            // Get most recent 5 attendance records
-            const sorted = [...attendanceData].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 5);
-            setRecentAttendance(sorted);
-          }
-        } catch (apiError) {
-          console.error('API error, using fallback data:', apiError);
+          // Get most recent 5 attendance records
+          const sorted = [...attendanceData].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 5);
+          setRecentAttendance(sorted);
+        } 
+        // If admin or instructor, fetch all attendance records
+        else {
+          const response = await axios.get(`${API_URL}/attendance/all/`);
+          const attendanceData = response.data;
           
-          // Fallback mock data if API fails
-          const mockStats = {
-            totalAttendance: 20,
-            presentCount: 15,
-            absentCount: 3,
-            lateCount: 2,
-          };
+          // Calculate stats
+          const totalAttendance = attendanceData.length;
+          const presentCount = attendanceData.filter(a => a.status === 'present').length;
+          const absentCount = attendanceData.filter(a => a.status === 'absent').length;
+          const lateCount = attendanceData.filter(a => a.status === 'late').length;
           
-          const mockAttendance = [
-            { date: '2025-05-03', status: 'present', time_in: '08:30:00', time_out: '16:30:00' },
-            { date: '2025-05-02', status: 'present', time_in: '08:25:00', time_out: '16:45:00' },
-            { date: '2025-05-01', status: 'late', time_in: '09:15:00', time_out: '17:00:00' },
-          ];
+          setStats({
+            totalAttendance,
+            presentCount,
+            absentCount,
+            lateCount,
+          });
           
-          setStats(mockStats);
-          setRecentAttendance(mockAttendance);
+          // Get most recent 5 attendance records
+          const sorted = [...attendanceData].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 5);
+          setRecentAttendance(sorted);
         }
         
         setLoading(false);

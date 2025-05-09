@@ -5,7 +5,7 @@ const PageTemplate = ({ title, children }) => {
   return (
     <div className="page-container">
       <Navigation />
-      <div className="page-content">
+      <div className="main-content">
         <h1 className="page-title">{title}</h1>
         <div className="page-body">
           {children}

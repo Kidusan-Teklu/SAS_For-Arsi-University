@@ -25,7 +25,7 @@ SECRET_KEY = 'e=f7a-gng%*6y$xwcq3lgq5%7$7y3g4x%&zb*-r+v=#wx$+4^y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,27 +38,22 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'api',
-    'attendance',
-    'biometric',
     'core',
-    'notifications',
-    'recognition',
-    'reports',
-    'schedules',
     'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'api.middleware.JWTAuthMiddleware',
 ]
 
 ROOT_URLCONF = 'SAS_backend.urls'
@@ -85,6 +80,7 @@ WSGI_APPLICATION = 'SAS_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# MongoDB configuration
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
@@ -98,6 +94,14 @@ DATABASES = {
         }
     }
 }
+
+# SQLite configuration (commented out)
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation

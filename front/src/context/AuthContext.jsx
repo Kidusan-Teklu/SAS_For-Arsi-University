@@ -34,83 +34,26 @@ export const AuthProvider = ({ children }) => {
       
       console.log(`Attempting login with email: ${email}`);
       
-      // Handle test user logins
-      if (email.startsWith('test.') && email.endsWith('@example.com') && password === 'password123') {
-        console.log('Using test user login path');
-        
-        // Extract role from email (format: test.[role]@example.com)
-        let role = email.split('.')[1].split('@')[0]; 
-        let userRole = role;
-        let displayName = '';
-        
-        // Special handling for compound role names
-        if (email === 'test.department.head@example.com') {
-          userRole = 'department_head';
-          displayName = 'Department Head';
-        } else {
-          // Map email to proper role name and display name
-          switch(role) {
-            case 'student':
-              displayName = 'Student User';
-              break;
-            case 'employee':
-              displayName = 'Employee User';
-              break;
-            case 'instructor':
-              displayName = 'Instructor User';
-              break;
-            case 'hr':
-              userRole = 'hr_officer';
-              displayName = 'HR Officer';
-              break;
-            case 'finance':
-              userRole = 'finance_officer';
-              displayName = 'Finance Officer';
-              break;
-            case 'administrative':
-              userRole = 'administrative_officer';
-              displayName = 'Administrative Officer';
-              break;
-            case 'admin':
-              displayName = 'General Admin';
-              break;
-            default:
-              userRole = 'user';
-              displayName = 'Test User';
-          }
-        }
-        
-        const testUser = {
-          id: `test_${userRole}_id`,
-          name: displayName,
-          email: email,
-          role: userRole
-        };
-        
-        const testToken = `test_token_${userRole}`;
-        
-        // Save to state
-        setToken(testToken);
-        setCurrentUser(testUser);
-        
-        // Save to local storage
-        localStorage.setItem('token', testToken);
-        localStorage.setItem('user', JSON.stringify(testUser));
-        
-        // Set Authorization header for future requests
-        axios.defaults.headers.common['Authorization'] = `Bearer ${testToken}`;
-        
-        setLoading(false);
-        return true;
-      }
+      // Clear any existing tokens and headers
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      delete axios.defaults.headers.common['Authorization'];
       
       // Regular login flow
       const response = await axios.post(`${API_URL}/login/`, { 
         email, 
         password 
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
       
       console.log('Login response:', response.data);
+      
+      if (!response.data.token) {
+        throw new Error('No token received from server');
+      }
       
       const { token, user } = response.data;
       
@@ -128,9 +71,18 @@ export const AuthProvider = ({ children }) => {
       setLoading(false);
       return true;
     } catch (err) {
-      console.error('Login error:', err.response || err);
+      console.error('Login error:', err);
+      if (err.response) {
+        console.error('Error response:', err.response.data);
+        setError(err.response.data.error || 'Login failed. Please check your credentials.');
+      } else if (err.request) {
+        console.error('No response received:', err.request);
+        setError('No response from server. Please check your connection.');
+      } else {
+        console.error('Error setting up request:', err.message);
+        setError('Failed to login. Please try again.');
+      }
       setLoading(false);
-      setError(err.response?.data?.error || 'Login failed. Please check your credentials.');
       return false;
     }
   };

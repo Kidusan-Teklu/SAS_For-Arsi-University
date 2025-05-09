@@ -1,7 +1,9 @@
 .profile-container {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 80px auto 0;
   padding: 30px 20px;
+  min-height: calc(100vh - 80px);
+  background-color: #f5f7fa;
 }
 
 h1 {

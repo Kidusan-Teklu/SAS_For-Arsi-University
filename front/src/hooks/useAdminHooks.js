@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+// Set the API URL consistently across the application
+const API_URL = 'http://localhost:8000/api';
+
 export function useFetchStats() {
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/admin/stats/')
+    axios.get(`${API_URL}/admin/stats/`)
       .then(response => {
         setStats(response.data);
         setLoading(false);

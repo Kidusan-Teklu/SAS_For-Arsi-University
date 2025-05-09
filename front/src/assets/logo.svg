@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Blue circular background -->
+  <circle cx="100" cy="100" r="95" fill="#ffffff" stroke="#6373c0" stroke-width="5"/>
+  
+  <!-- Outer ring -->
+  <circle cx="100" cy="100" r="85" fill="none" stroke="#6373c0" stroke-width="2"/>
+  
+  <!-- Inner decorative elements -->
+  <path d="M100 30 L120 70 L80 70 Z" fill="#6373c0"/>
+  <path d="M30 100 L70 120 L70 80 Z" fill="#6373c0"/>
+  <path d="M100 170 L80 130 L120 130 Z" fill="#6373c0"/>
+  <path d="M170 100 L130 80 L130 120 Z" fill="#6373c0"/>
+  
+  <!-- Circular inner layer -->
+  <circle cx="100" cy="100" r="35" fill="#6373c0"/>
+  
+  <!-- Letters A and U -->
+  <text x="100" y="110" font-family="Arial" font-size="45" font-weight="bold" fill="white" text-anchor="middle">AU</text>
+</svg> 

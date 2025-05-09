@@ -15,14 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.http import JsonResponse
+
+def health_check(request):
+    return JsonResponse({"status": "ok", "message": "API server is running"})
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
-    path('api/attendance/', include('attendance.urls')),
-    path('api/biometric/', include('biometric.urls')),
-    path('api/notifications/', include('notifications.urls')),
-    path('api/recognition/', include('recognition.urls')),
-    path('api/reports/', include('reports.urls')),
-    path('api/schedules/', include('schedules.urls')),
+    path('health/', health_check, name='health'),
 ]
